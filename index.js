@@ -20,3 +20,7 @@ bookstoreServer.get('/',(req,res)=>{
     res.status(200).send(`<h1>Server Started... and waiting for client request</h1>`)
 })
 
+//error handling middleware
+bookstoreServer.use((err,req,res,next)=>{
+    res.status(500).json(err.message)
+})
