@@ -9,6 +9,7 @@ const bookstoreServer = express()
 bookstoreServer.use(cors())
 bookstoreServer.use(express.json())
 bookstoreServer.use(router)
+bookstoreServer.use('/uploads',express.static('./uploads'))
 
 const PORT = process.env.PORT
 
